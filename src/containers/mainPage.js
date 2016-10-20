@@ -6,7 +6,12 @@ export default class MainPage extends Component {
     render(){
         return(
             <div className = 'main-page'>
-                <div>MAIN PAGE</div>
+                <section className='main-page-header'>
+                  <img src='https://s3-us-west-2.amazonaws.com/eseokonofua/images/IMG_0509.jpg'/>
+
+                </section>
+                <section style={{height:'900px',backgroundColor:'#9b59b6'}}></section>
+
             </div>
         )
     }

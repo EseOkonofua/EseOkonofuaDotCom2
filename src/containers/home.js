@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import ActivityTracker from '../components/activityTracker'
-import MainPage from './mainPage'
+import ActivityTracker from '../components/activitytracker'
+import MainPage from './mainpage'
 
 export default class Home extends Component {
 

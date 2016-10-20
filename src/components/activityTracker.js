@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import moment from 'moment';
 
+import Timeline from './timeline'
 export default class ActivityTracker extends Component {
     constructor(){
         super();
         let today = moment();
         let currentDay = today.format('dddd, Do');
         let currentDate = today.format('MMMM YYYY');
-        let currentTime = today.format('h:mm:ss A');
         let currentHour = today.hour();
 
         this.checkDateTime = this.checkDateTime.bind(this);
@@ -22,7 +22,6 @@ export default class ActivityTracker extends Component {
             currentMoment:today,
             currentDay,
             currentDate,
-            currentTime,
             currentHour,
             activity: {
                 pre: this.getPre(),
@@ -33,7 +32,6 @@ export default class ActivityTracker extends Component {
 
     getActivities(){
         let hour = moment().hour();
-        console.log(hour)
         let act1 = ['Eating breakfast', 'Working out', 'Checking my email'];
         let act2 = ['Working hard', 'Taking the day off', 'On vacation'];
         let act3 = ['Coding away', 'Hanging with friends', 'Relaxing'];
@@ -58,10 +56,10 @@ export default class ActivityTracker extends Component {
         let now = moment();
         let currentDay = now.format('dddd, Do');
         let currentDate = now.format('MMMM YYYY');
-        let currentTime = now.format('h:mm:ss A');
+
         if(!now.isSame(this.state.currentMoment) ){
             this.setState({
-                currentDay, currentDate, currentTime, currentMoment:now
+                currentDay, currentDate,currentMoment:now
             })
         };
 
@@ -82,7 +80,6 @@ export default class ActivityTracker extends Component {
 
     getPre(){
         let pre='';
-        console.log(this.index)
         switch(this.index){
             case 0:
                 pre = "I'm probably...";
@@ -98,31 +95,36 @@ export default class ActivityTracker extends Component {
     }
 
     componentWillMount(){
-        this.timeCounter = setInterval(this.checkDateTime, 100);
+        this.timeCounter = setInterval(this.checkDateTime, 1000);
         this.activityLoop = setInterval( this.switchActivity,10000);
     }
 
-    render(){
-        var slits = [];
-        for (var i = 0; i < 24; i++){
-            slits.push(<hr key={i} style={{border:'1px solid white'}}/>)
+    componentDidMount(){
+      var clock = function(p){
+        p.setup = function(){
+          var myCanvas = p.createCanvas(800,500);
+          myCanvas.parent('clock');
         }
+
+      }
+
+      var myclock = new p5(clock);
+    }
+    render(){
+
         return(
             <div className='activity-tracker'>
-                <div className='main'>
+
                     <div className='day'>{this.state.currentDay}</div>
                     <div className='date'>{this.state.currentDate}</div>
+                    <h1 className='title'>Ese Okonofua.</h1>
                     <div ref = 'whatAmIDoing' className='what-am-i-doing'>
                         <small>{this.state.activity.pre}</small>
                         <div>{this.state.activity.activity}</div>
                     </div>
-                    <div className='time'>{this.state.currentTime}</div>
-                </div>
-                <div className='timeline'>
-                    {
-                        slits
-                    }
-                </div>
+                    <div id="clock"></div>
+                    <Timeline/>
+
             </div>
 
         )
