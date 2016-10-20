@@ -7,7 +7,7 @@ var extractCSS = new ExtractTextPlugin('styles.css',{
 });
 
 module.exports = {
-  entry: ['./src','webpack-hot-middleware/client'],
+  entry: ['./src','webpack-hot-middleware/client?reload=true'],
 
   devtool: 'source-map',
   output: {

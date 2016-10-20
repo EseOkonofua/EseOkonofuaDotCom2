@@ -6,8 +6,6 @@ import { createStore } from 'redux'
 
 import allReducers from './reducers'
 
-import App from './containers/app'
-import TaskList from './containers/tasklist'
 import Home from './containers/home'
 
 
@@ -18,11 +16,7 @@ const store = createStore(allReducers);
 render(
   <Provider store={store}>
     <Router history = {browserHistory}>
-      <Route path='/' component= {App}>
-        <IndexRoute component={Home}/>
-        <Route path='/tasklist' component= {TaskList}/>
-      </Route>
-
+      <Route path='/' component= {Home}></Route>
     </Router>
   </Provider>
 , document.getElementById('app'));

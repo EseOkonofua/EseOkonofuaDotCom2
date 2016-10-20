@@ -1,5 +1,7 @@
 body,html {
   margin:0;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+
 }
 
 a{
@@ -11,88 +13,100 @@ a:active, a:visited {
   color:inherit;
 }
 
-.header {
-
-  color:white;
-  background-color: black;
-  border-bottom:3px solid #ccc;
-  text-transform: uppercase;
-  text-align: center;
-  padding:10px
-}
-
-.footer-container{
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-}
-
-.footer{
-  background-color: black;
-  text-align: center;
-  color:white;
-  border:1px 0px solid #ccc;
-  padding:5px;
-}
-
-.tasklist{
-  background-color:#f1f1f1;
-  margin:0px 10px;
-  padding:5px;
-  border:4px solid black;
-  overflow-x: hidden
-}
-
-.tasklist-header{
-  text-align:center;
-  border-bottom:1px solid #ccc
-}
-
-.task{
-  margin-left:5px;
-  box-sizing: border-box;
-}
-
-.task-check{
-  margin-left:8px;
-  cursor:pointer;
-}
-
-.task-message{
-  border:1px dashed black;
-  padding:3px;
-  box-sizing: border-box;
+#app {
+    box-sizing: border-box;
+    position: absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    display:flex;
 
 }
 
-.green{
-  color:lightgreen
+.container{
+    box-size:border-box;
+    flex:1;
+    display:flex;
+    flex-direction: row;
 }
 
-.red{
-  color:#dc4c4c
+.activity-tracker{
+    flex:1;
+    background:linear-gradient(45deg, black , rgba(0,0,0,0.8));
+    color:white;
+    max-width:800px;
+    display:flex;
+    flex-direction: row;
 }
 
-.green-border{
-  color:lightgreen
+.activity-tracker{
+    .main{
+        flex:1;
+        display: flex;
+        flex-direction: column
+    }
+
+    .timeline{
+        background:linear-gradient(to bottom, black , orange 10%, yellow 20%, orange 70%, black 80%);
+        flex:1;
+        max-width:5px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .timeline > hr{
+        margin:0;
+    }
+
 }
 
-.red-border{
-  color:#dc4c4c
+.main-page{
+    flex:1
 }
 
-.link-active{
-  border-bottom:1px solid #ccc
+.date{
+
 }
 
-.animation-enter {
+.time{
 
- position:relative;
-  left:100%
- }
+}
 
-.animation-enter.animation-enter-active {
-  left:0;
- transition: left 0.5s linear;
- }
+.day{
+
+}
+
+.what-am-i-doing{
+    flex:1;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size:2em;
+}
+
+@keyframes fadeInFadeOut{
+    0%{ opacity: 0 }
+    50%{ opacity: 1}
+    100%{ opacity: 0}
+}
+
+.what-am-i-doing{
+    animation-name: fadeInFadeOut;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.what-am-i-doing{
+    small{
+        margin-right:4em;
+    }
+
+    div{
+        font-size: 2em;
+        text-align: center;
+    }
+}
