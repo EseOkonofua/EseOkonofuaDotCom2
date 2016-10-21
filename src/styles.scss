@@ -37,12 +37,9 @@ a:active, a:visited {
   color:white;
   padding-left:10px;
   flex:2;
-  display:flex;
-  flex-direction: column;
-  padding:2vh 2vw;
-  padding:5px;
-
-  padding-bottom:10px;
+  padding:1.5em;
+  max-width:1480px;
+  position:relative;
 
   transition:width 0.5s ease-in;
   -webkit-transition-delay: 0.5s; /* Safari */
@@ -68,9 +65,17 @@ a:active, a:visited {
 
 .main-page-header{
   background-color: #d55061;
+  position: relative;
   img{
     width:100%
   }
+}
+
+.blurb{
+    position:absolute;
+    top:10%;
+    left:15%;
+    color:white
 }
 
 .date{
@@ -114,57 +119,115 @@ a:active, a:visited {
 }
 
 .title{
-  text-align: center;
-  display:flex;
-  align-items: center;
-  justify-content: center;
   font-weight: normal;
-  font-size: 5vw;
+  font-size: 8vw;
+  margin:5px 0px;
+}
+
+.title:first-of-type{
+    margin-bottom:0;
 }
 
 .timeline{
     background-color: white;
-    flex:1;
-    max-width:7px;
-    min-height:450px;
+    height:5px;
     border-radius:2px;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left:10%;
-    position: relative;
-}
-
-.timeline > hr{
-    margin:0;
+    position: absolute;
+    left:1.5em;
+    right:1.5em;
+    bottom:1.5em;
 }
 
 
 .time-hand{
   position:absolute;
-  height:2px;
   top:0;
   left:0;
-  right:0;
-  background-color: black;
+  height:100%;
+  width:2px;
+  background-color: #273657;
   transition:top 0.5s linear
 }
 
 .clock{
   position:absolute;
-  left:25px;
   white-space: nowrap;
   padding:5px 10px;
   border-radius:2px;
   border:1px solid white;
-  bottom:0;
-  font-size: 4vw;
-  transition: all 0.5s linear
-}
-@media(min-width){
-
+  bottom:20px;
+  font-size: 5vw;
+  transition: all 0.2s linear;
 
 }
+
+.clock2{
+    white-space: nowrap;
+    padding:5px 10px;
+    border-radius:2px;
+    border:1px solid white;
+    font-size: 5vw;
+    transition: all 0.2s linear;
+    display:none;
+}
+
+.pronounce{
+    font-size: 20%;
+    cursor: pointer;
+}
+
+@media(max-width:1240px){
+    .container{
+        flex-direction:column;
+        overflow-y:auto;
+        display:block;
+    }
+
+    .main-page{
+        overflow: initial;
+            min-width:0;
+    }
+
+    .activity-tracker{
+        display:block;
+        width:100%;
+        height:100vh;
+        box-sizing: border-box;
+    }
+    #app{
+
+    }
+
+    .title{
+        font-size: 15vw;
+    }
+
+    .clock{
+        font-size: 10vw;
+    }
+
+    .blurb{
+        left:5%;
+        top:5%;
+    }
+}
+
+@media(max-height:560px){
+    .timeline{
+        display:none;
+    }
+
+    .activity-tracker{
+        height: auto !important;
+    }
+
+    .clock2{
+        display:block;
+        text-align: center;
+    }
+}
+
+
 
 section{
   margin:0;

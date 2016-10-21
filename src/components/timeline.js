@@ -42,15 +42,33 @@ export default class Timeline extends Component{
     this.clockInterval = setInterval(this.checkTime,100);
   }
 
+  componentDidMount(){
+
+
+  }
+
   render(){
+
     this.timePercent = (this.state.currentSecond/this.SECONDS_IN_A_DAY)*100;
+    let dir = '';
+    let now = moment();
+    let hour = now.hour();
+
+    if(hour > 12) dir = {right:'0'}
+    else dir = {left:'0'}
+
   //  console.log(timePercent);
     return (
-      <div className='timeline'>
-        <div style={{top:`${this.timePercent}%`}}  className='time-hand'>
-          <div className ='clock'>{this.state.currentTime}</div>
+        <div>
+            <div className='timeline'>
+                <div style={{left:`${this.timePercent}%`}}  className='time-hand'>
+                    <div style={dir} className ='clock'>{this.state.currentTime}</div>
+                </div>
+            </div>
+            <div className='clock2'>{this.state.currentTime}</div>
         </div>
-      </div>
+
+
     )
   }
 }

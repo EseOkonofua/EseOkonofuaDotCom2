@@ -100,31 +100,24 @@ export default class ActivityTracker extends Component {
     }
 
     componentDidMount(){
-      var clock = function(p){
-        p.setup = function(){
-          var myCanvas = p.createCanvas(800,500);
-          myCanvas.parent('clock');
-        }
 
-      }
-
-      var myclock = new p5(clock);
     }
+
     render(){
 
         return(
             <div className='activity-tracker'>
+                <div className='day'>{this.state.currentDay}</div>
+                <div className='date'>{this.state.currentDate}</div>
+                <div className='title'>Ese<span className = 'pronounce'> /&#283;s'&#257;'/</span></div>
+                <div className='title'>Okonofua.</div>
 
-                    <div className='day'>{this.state.currentDay}</div>
-                    <div className='date'>{this.state.currentDate}</div>
-                    <h1 className='title'>Ese Okonofua.</h1>
-                    <div ref = 'whatAmIDoing' className='what-am-i-doing'>
-                        <small>{this.state.activity.pre}</small>
-                        <div>{this.state.activity.activity}</div>
-                    </div>
-                    <div id="clock"></div>
-                    <Timeline/>
 
+                <div ref = 'whatAmIDoing' className='what-am-i-doing'>
+                    <small>{this.state.activity.pre}</small>
+                    <div>{this.state.activity.activity}</div>
+                </div>
+                <Timeline/>
             </div>
 
         )
