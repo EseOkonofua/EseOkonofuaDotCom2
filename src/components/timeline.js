@@ -11,6 +11,7 @@ export default class Timeline extends Component{
 
     this.getMomentSecond = this.getMomentSecond.bind(this);
     this.checkTime = this.checkTime.bind(this);
+    this.displayHours = this.displayHours.bind(this);
     let now = moment();
     this.state = { currentTime: now.format('h:mm:ss A') , currentSecond: this.getMomentSecond()  };
   }
@@ -47,6 +48,21 @@ export default class Timeline extends Component{
 
   }
 
+  displayHours(){
+    let now = moment();
+    var time = [];
+    var active = '';
+    for(var i = 0; i < 24; i++){
+      if(now.hour() >= i && now.hour() < (i+1)) active = 'active'
+      else active = '';
+      let hour = (
+        <div key={i} style={{left:((i/23)*100) - 1.5 +'%' }} className = {'hours '+active} >{i}</div>
+      )
+      time.push(hour);
+    }
+    return time;
+  }
+
   render(){
 
     this.timePercent = (this.state.currentSecond/this.SECONDS_IN_A_DAY)*100;
@@ -64,8 +80,10 @@ export default class Timeline extends Component{
                 <div style={{left:`${this.timePercent}%`}}  className='time-hand'>
                     <div style={dir} className ='clock'>{this.state.currentTime}</div>
                 </div>
+                {this.displayHours()}
             </div>
             <div className='clock2'>{this.state.currentTime}</div>
+
         </div>
 
 

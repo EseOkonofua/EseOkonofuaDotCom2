@@ -14,9 +14,11 @@ export default class ActivityTracker extends Component {
         this.getActivities = this.getActivities.bind(this);
         this.switchActivity = this.switchActivity.bind(this);
         this.getPre = this.getPre.bind(this);
+        this.playEse = this.playEse.bind(this);
         this.index = 0;
         this.timeCounter;
         this.activityLoop;
+        this.pronounciation = new Audio('EsePronounce.wav');
 
         this.state = {
             currentMoment:today,
@@ -96,23 +98,25 @@ export default class ActivityTracker extends Component {
 
     componentWillMount(){
         this.timeCounter = setInterval(this.checkDateTime, 1000);
-        this.activityLoop = setInterval( this.switchActivity,10000);
+        this.activityLoop = setInterval( this.switchActivity,20000);
     }
 
     componentDidMount(){
 
     }
 
-    render(){
+    playEse(){
+      this.pronounciation.play();
+    }
 
+    render(){
         return(
             <div className='activity-tracker'>
                 <div className='day'>{this.state.currentDay}</div>
                 <div className='date'>{this.state.currentDate}</div>
-                <div className='title' alt='FirstName'>Ese<span className = 'pronounce'> /&#283;s'&#257;'/</span></div>
+                <div className='title' alt='FirstName'>Ese<span onClick ={this.playEse}  className = 'pronounce'> /&#283;s'&#257;'/</span></div>
                 <div className='title' alt='LastName'>Okonofua.</div>
-
-
+                <p>Full stack life developer. Google search guru.</p>
                 <div ref = 'whatAmIDoing' className='what-am-i-doing'>
                     <small>{this.state.activity.pre}</small>
                     <div>{this.state.activity.activity}</div>
