@@ -109,8 +109,8 @@ export default class ActivityTracker extends Component {
             <div className='activity-tracker'>
                 <div className='day'>{this.state.currentDay}</div>
                 <div className='date'>{this.state.currentDate}</div>
-                <div className='title'>Ese<span className = 'pronounce'> /&#283;s'&#257;'/</span></div>
-                <div className='title'>Okonofua.</div>
+                <div className='title' alt='FirstName'>Ese<span className = 'pronounce'> /&#283;s'&#257;'/</span></div>
+                <div className='title' alt='LastName'>Okonofua.</div>
 
 
                 <div ref = 'whatAmIDoing' className='what-am-i-doing'>

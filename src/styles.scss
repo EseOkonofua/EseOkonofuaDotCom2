@@ -124,7 +124,15 @@ a:active, a:visited {
   margin:5px 0px;
 }
 
-.title:first-of-type{
+.title[alt='FirstName']{
+    margin-bottom:-20px;
+}
+
+.title[alt='LastName']{
+    margin-top:-20px;
+}
+
+.title:first-child{
     margin-bottom:0;
 }
 
@@ -156,7 +164,7 @@ a:active, a:visited {
   border-radius:2px;
   border:1px solid white;
   bottom:20px;
-  font-size: 5vw;
+  font-size: 2.5vw;
   transition: all 0.2s linear;
 
 }
@@ -202,8 +210,15 @@ a:active, a:visited {
         font-size: 15vw;
     }
 
+    .title[alt='FirstName']{
+        margin-bottom:0
+    }
+    .title[alt='LastName']{
+        margin-top:0;
+    }
+
     .clock{
-        font-size: 10vw;
+        font-size: 5vw;
     }
 
     .blurb{
