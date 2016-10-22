@@ -11,7 +11,10 @@ export default class MainPage extends Component {
                   <img src='https://s3-us-west-2.amazonaws.com/eseokonofua/images/IMG_0509.jpg'/>
 
                 </section>
-                <section style={{height:'900px',backgroundColor:'#9b59b6'}}></section>
+                <section style={{backgroundColor:'#fd5c78'}}></section>
+                <section style={{backgroundColor:'#6f5468'}}></section>
+                <section style={{backgroundColor:'#f6bd9d'}}></section>
+                <section style={{backgroundColor:'#fc8b82'}}></section>
 
             </div>
         )
