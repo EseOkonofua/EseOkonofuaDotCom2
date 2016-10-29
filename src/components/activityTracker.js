@@ -34,7 +34,9 @@ export default class ActivityTracker extends Component {
     }
 
     getActivities(){
-        let hour = moment().hour();
+         let hour = moment().hour();
+
+        console.log(hour);
         let act1 = ['Eating breakfast', 'Working out', 'Checking my email'];
         let act2 = ['Working hard', 'Taking the day off', 'On vacation'];
         let act3 = ['Coding away', 'Hanging with friends', 'Relaxing'];
@@ -46,7 +48,7 @@ export default class ActivityTracker extends Component {
         else if(hour >= 9 && hour < 17){
             return act2;
         }
-        else if(hour >= 17 && hour < 23){
+        else if(hour >= 17 && hour <= 23){
             return act3;
         }
         else if(hour >= 0 && hour < 6){

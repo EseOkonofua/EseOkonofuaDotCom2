@@ -19,9 +19,11 @@ function updateWeather(){
     var req = http.request(options, function(res){
         console.log(`STATUS: ${res.statusCode}`);
         res.setEncoding('utf-8');
+        var data = '';
         res.on('data',function(chunk){
             console.log("Writing weather.json file");
-            weatherStream.write(JSON.stringify(chunk))
+            data += chunk;
+            weatherStream.write(JSON.stringify(data))
             weatherStream.end();
         });
 

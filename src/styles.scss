@@ -123,6 +123,32 @@ a:active, a:visited {
   }
 }
 
+@keyframes sway{
+  0%{
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+  }
+
+  50%{
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+  }
+  100%{
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+  }
+}
+
+.sway{
+  animation-name: sway;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(0.54,-1.12, 0.42, 2.21);
+}
+
 .rotate{
   animation-name: rotate;
   animation-iteration-count: infinite;
@@ -313,4 +339,12 @@ a:active, a:visited {
 
 section{
   margin:0;
+}
+
+.weather:after{
+  content:attr(data-temp);
+  display: inline-block;
+  position:relative;
+  left:4px;
+  font-size:0.5rem;
 }

@@ -20,6 +20,7 @@ export default class Weather extends Component{
         })
         .then(resJson =>{
             var data = JSON.parse(resJson);
+            console.log(data);
             this.setState({
                 temp:data.main.temp,
                 desc:data.weather[0].description,
@@ -31,11 +32,16 @@ export default class Weather extends Component{
     render(){
 
         return (
-            <i alt='weather' data-temp={this.state.temp}
-            data-desc={this.state.desc}
-            data-country={this.state.country}
-            data-city={this.state.city}
-            style={{color:'aqua',marginLeft:'8px',position:'relative',top:'4px'}} className='rotate fa fa-sun-o fa-lg'></i>
+          <span data-temp={this.state.temp+'\xB0'+'C'}
+          data-desc={this.state.desc}
+          data-country={this.state.country}
+          data-city={this.state.city} className='weather'>
+            <i alt='weather'
+            style={{color:'aqua',marginLeft:'8px',position:'relative',top:'4px'}} className='weather sway fa fa-moon-o fa-lg'>
+
+            </i>
+          </span>
+
         )
 
     }
