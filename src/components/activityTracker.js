@@ -34,9 +34,7 @@ export default class ActivityTracker extends Component {
     }
 
     getActivities(){
-         let hour = moment().hour();
-
-        console.log(hour);
+        let hour = moment().hour();
         let act1 = ['Eating breakfast', 'Working out', 'Checking my email'];
         let act2 = ['Working hard', 'Taking the day off', 'On vacation'];
         let act3 = ['Coding away', 'Hanging with friends', 'Relaxing'];
@@ -115,7 +113,7 @@ export default class ActivityTracker extends Component {
     render(){
         return(
             <div className='activity-tracker'>
-                <p className='day'>{this.state.currentDay} <Weather/></p>
+                <p className='day'>{this.state.currentDay} <Weather weather={this.props.weather}/></p>
                 <p className='date'>{this.state.currentDate}</p>
                 <div className='title' alt='FirstName'>Ese<span onClick ={this.playEse}  style={{color:'aqua'}} className = 'pronounce'> /&#283;s'&#257;'/</span></div>
                 <div className='title' alt='LastName'>Okonofua.</div>

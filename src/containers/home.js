@@ -5,10 +5,9 @@ import ActivityTracker from '../components/activitytracker'
 class Home extends Component {
 
   render(){
-      console.log(this.props);
     return(
         <div className='container'>
-            <ActivityTracker />
+            <ActivityTracker weather={this.props.weather} moment={this.props.moment} />
             {this.props.children}
         </div>
     )

@@ -146,7 +146,7 @@ a:active, a:visited {
   animation-name: sway;
   animation-iteration-count: infinite;
   animation-duration: 3s;
-  animation-timing-function: cubic-bezier(0.54,-1.12, 0.42, 2.21);
+  animation-timing-function: ease-in-out;
 }
 
 .rotate{
@@ -258,6 +258,16 @@ a:active, a:visited {
     color:aqua;
 }
 
+#bio {
+    background-color:#fd5c78;
+    color:white;
+    padding:4rem;
+    h2{
+        font-weight: normal
+    }
+
+}
+
 @media(max-width:1240px){
     .container{
         flex-direction:column;
@@ -279,8 +289,8 @@ a:active, a:visited {
 
 
     }
-    #app{
-
+    #bio{
+        padding:2rem;
     }
 
     .title{
@@ -334,6 +344,7 @@ a:active, a:visited {
     }
 
 }
+
 
 
 
