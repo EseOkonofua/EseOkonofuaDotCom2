@@ -46,7 +46,7 @@ export default class ActivityTracker extends Component {
         else if(hour >= 9 && hour < 17){
             return act2;
         }
-        else if(hour >= 17 && hour < 23){
+        else if(hour >= 17 && hour <= 23){
             return act3;
         }
         else if(hour >= 0 && hour < 6){
@@ -113,7 +113,7 @@ export default class ActivityTracker extends Component {
     render(){
         return(
             <div className='activity-tracker'>
-                <p className='day'>{this.state.currentDay} <Weather/></p>
+                <p className='day'>{this.state.currentDay} <Weather weather={this.props.weather}/></p>
                 <p className='date'>{this.state.currentDate}</p>
                 <div className='title' alt='FirstName'>Ese<span onClick ={this.playEse}  style={{color:'aqua'}} className = 'pronounce'> /&#283;s'&#257;'/</span></div>
                 <div className='title' alt='LastName'>Okonofua.</div>

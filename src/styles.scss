@@ -258,6 +258,16 @@ a:active, a:visited {
     color:aqua;
 }
 
+#bio {
+    background-color:#fd5c78;
+    color:white;
+    padding:4rem;
+    h2{
+        font-weight: normal
+    }
+
+}
+
 @media(max-width:1240px){
     .container{
         flex-direction:column;
@@ -279,8 +289,8 @@ a:active, a:visited {
 
 
     }
-    #app{
-
+    #bio{
+        padding:2rem;
     }
 
     .title{
@@ -334,6 +344,7 @@ a:active, a:visited {
     }
 
 }
+
 
 
 
