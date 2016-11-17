@@ -1,4 +1,3 @@
 # EseOkonofuaDotCom2 
-##[Development candidate](https://eokonofuadotcom2.herokuapp.com)
-
+<a href="https://eokonofuadotcom2.herokuapp.com" target="_blank">Development site</a>
 My second personal website I've made.
