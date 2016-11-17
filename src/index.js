@@ -8,9 +8,9 @@ import moment from 'moment'
 
 import allReducers from './reducers'
 
-import Home from './containers/home'
-import MainPage from './containers/mainpage'
-import Contact from './components/contact'
+import Home from './containers/home.js'
+import MainPage from './containers/mainpage.js'
+import Contact from './components/contact.js'
 
 //SERVER ACTIONS
 import {getWeather,setMoment} from './actions'
