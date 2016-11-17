@@ -263,9 +263,29 @@ a:active, a:visited {
     color:white;
     padding:6rem;
     padding-top:3rem;
-    h2{
-        font-weight: normal
+    h2,h1{
+        font-size: 2.5vw;
+        font-weight: normal;
+        display:inline-block;
+        border-bottom: 1px dashed white;
     }
+
+    p{
+        line-height: 170%;
+    }
+
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        max-height:150px;
+        display: inline-block;
+        border-radius: 50%;
+    }
+
 
 }
 
@@ -292,6 +312,10 @@ a:active, a:visited {
     }
     #bio{
         padding:2rem;
+
+        h1{
+            font-size:2.5em;
+        }
     }
 
     .title{
