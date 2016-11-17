@@ -9,7 +9,7 @@ import moment from 'moment'
 import allReducers from './reducers'
 
 import Home from './containers/home'
-import MainPage from './containers/mainpage'
+import MainPage from './containers/mainPage'
 import Contact from './components/contact'
 
 //SERVER ACTIONS
