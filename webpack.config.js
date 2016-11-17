@@ -7,8 +7,7 @@ var extractCSS = new ExtractTextPlugin('styles.css',{
 });
 
 module.exports = {
-  entry: ['./src','webpack-hot-middleware/client?reload=true'],
-
+  entry: process.env.NODE_ENV === 'production' ? ['./src'] : ['./src','webpack-hot-middleware/client?reload=true'],
   devtool: 'source-map',
   output: {
     path:path.resolve('public'),
