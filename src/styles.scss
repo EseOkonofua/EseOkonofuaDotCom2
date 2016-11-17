@@ -35,7 +35,7 @@ a:active, a:visited {
 }
 
 .container{
-    box-size:border-box;
+    box-sizing:border-box;
     flex:1;
     display:flex;
     flex-direction: row;
@@ -47,6 +47,8 @@ a:active, a:visited {
   background:linear-gradient(to bottom right, #1a2e4f,rgba(26,46,79,0.9) );
   color:white;
   padding-left:10px;
+  -webkit-flex: 2; /* Safari 6.1+ */
+  -ms-flex: 2; /* IE 10 */
   flex:2;
   padding:1.5em;
   position:relative;
@@ -56,8 +58,10 @@ a:active, a:visited {
     transition-delay: 0.5s;
 
     .main{
-        flex:1;
         display: flex;
+        -webkit-flex: 1; /* Safari 6.1+ */
+        -ms-flex: 1; /* IE 10 */
+        flex:1;
         flex-direction: column
     }
 
@@ -69,6 +73,8 @@ a:active, a:visited {
 
 
 .main-page{
+    -webkit-flex: 1; /* Safari 6.1+ */
+    -ms-flex: 1; /* IE 10 */
     flex:1;
     min-width: 850px;
     overflow-y:auto;
@@ -76,7 +82,7 @@ a:active, a:visited {
     transition-delay: 0.5s;
 
     section{
-        min-height:200px;
+
     }
 }
 
@@ -87,14 +93,33 @@ a:active, a:visited {
   img{
     width:100%
   }
+
+  .blurb{
+      position:absolute;
+      top:10%;
+      left:15%;
+      color:white
+  }
 }
 
-.blurb{
+.my-face{
+  position:relative;
+  img{
+    width:100%;
+
+  }
+
+  div{
     position:absolute;
-    top:10%;
-    left:15%;
-    color:white
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+  }
 }
+
+
 
 .date{
 
@@ -157,6 +182,8 @@ a:active, a:visited {
 }
 
 .what-am-i-doing{
+  -webkit-flex: 1; /* Safari 6.1+ */
+  -ms-flex: 1; /* IE 10 */
   flex:1;
   display:flex;
   flex-direction: column;
@@ -289,6 +316,7 @@ a:active, a:visited {
 
 }
 
+
 @media(max-width:1240px){
     .container{
         flex-direction:column;
@@ -377,10 +405,23 @@ section{
   margin:0;
 }
 
+.weather{
+  margin-left:8px;
+  position:relative;
+  top:2px
+}
+
+.weather.cool{
+  color:aqua;
+}
+.weather.hot{
+  color:$sunyellow
+}
 .weather:after{
   content:attr(data-temp);
   display: inline-block;
   position:relative;
   left:4px;
   font-size:0.5rem;
+  color:white;
 }

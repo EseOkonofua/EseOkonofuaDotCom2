@@ -7,7 +7,7 @@ class Home extends Component {
   render(){
     return(
         <div className='container'>
-            <ActivityTracker weather={this.props.weather} moment={this.props.moment} />
+            <ActivityTracker {...this.props} />
             {this.props.children}
         </div>
     )

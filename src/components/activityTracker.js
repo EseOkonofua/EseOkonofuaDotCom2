@@ -4,8 +4,9 @@ import moment from 'moment';
 import Timeline from './timeline'
 import Weather from './weather'
 export default class ActivityTracker extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
+        this.isLoad = true;
         let today = moment();
         let currentDay = today.format('dddd, Do');
         let currentDate = today.format('MMMM YYYY');
@@ -111,18 +112,19 @@ export default class ActivityTracker extends Component {
     }
 
     render(){
+
         return(
             <div className='activity-tracker'>
-                <p className='day'>{this.state.currentDay} <Weather weather={this.props.weather}/></p>
+                <p className='day'>{this.state.currentDay} <Weather {...this.props}/></p>
                 <p className='date'>{this.state.currentDate}</p>
-                <div className='title' alt='FirstName'>Ese<span onClick ={this.playEse}  style={{color:'aqua'}} className = 'pronounce'> /&#283;s'&#257;'/</span></div>
+                <div className='title' alt='FirstName'>Ese<span onClick ={this.playEse} className = {(this.props.weather && this.props.weather.main.temp  < 13) ? 'pronounce cool' : 'pronounce hot'}> /&#283;s'&#257;'/</span></div>
                 <div className='title' alt='LastName'>Okonofua.</div>
                 <div>Full stack life developer. Google search guru.</div>
                 <div ref = 'whatAmIDoing' className='what-am-i-doing'>
                     <small>{this.state.activity.pre}</small>
                     <div>{this.state.activity.activity}</div>
                 </div>
-                <Timeline/>
+                <Timeline moment={this.props.moment}/>
             </div>
 
         )

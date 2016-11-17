@@ -25,13 +25,16 @@ export default class MainPage extends Component {
                     </p>
 
                 </section>
-                <section style={{backgroundColor:'#6f5468'}}></section>
+                <section className='my-face'>
+                  <div></div>
+                  <img src="https://s3-us-west-2.amazonaws.com/eseokonofua/images/headshot.jpg"></img>
+                </section>
                 <section style={{backgroundColor:'#f6bd9d'}}></section>
                 <section style={{backgroundColor:'#fc8b82'}}></section>
                 <section className = 'footer'>
                     <a href="#">Github</a>
                     <a href="#">Codepen</a>
-                    <img src="https://s3-us-west-2.amazonaws.com/eseokonofua/images/headshot.jpg"></img>
+
                     <a href ="#">Insta</a>
                     <a href="#">LinkedIn</a>
                 </section>
