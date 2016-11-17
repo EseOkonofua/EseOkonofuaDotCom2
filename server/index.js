@@ -6,17 +6,22 @@ var express = require('express');
 var app = express();
 
 
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackConfig = require('../webpack.config.js');
-const compiler = webpack(webpackConfig);
+if(process.env.NODE_ENV !== 'production'){
+	const webpackHotMiddleware = require('webpack-hot-middleware');
+	const webpackDevMiddleware = require('webpack-dev-middleware');
+	const webpackConfig = require('../webpack.config.js');
+	const compiler = webpack(webpackConfig);
+}
 
 app.use(express.static(path.resolve('public')));
-app.use(webpackDevMiddleware(compiler, {
-	noInfo: true, publicPath: webpackConfig.output.publicPath
-}));
 
-app.use(webpackHotMiddleware(compiler));
+if(process.env.NODE_ENV !== 'production'){
+	app.use(webpackDevMiddleware(compiler, {
+		noInfo: true, publicPath: webpackConfig.output.publicPath
+	}));
+
+	app.use(webpackHotMiddleware(compiler));
+}
 
 
 var updateWeather = require('./weather.js').updateWeather;
