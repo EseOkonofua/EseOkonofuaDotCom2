@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux'
-
+import moment from 'moment'
 
 const allReducers = combineReducers({
-    moment:(state=null,action)=>{
+    moment:(state=moment(),action)=>{
       switch(action.type){
         case 'SET_MOMENT':
           return action.moment

@@ -19,9 +19,11 @@ require('./styles.scss');
 
 const store = createStore(allReducers, applyMiddleware(thunk));
 var dispatchMoment = ()=> store.dispatch(setMoment(moment()));
+
 setInterval(dispatchMoment,100);
+
 store.dispatch(getWeather()).then(()=>{
-  console.log("Received weather from api",store.getState());
+
 });
 
 render(

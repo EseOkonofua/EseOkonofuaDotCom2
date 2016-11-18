@@ -1,23 +1,22 @@
 import React, { Component } from 'react'
-import moment from 'moment';
 
 export default class Timeline extends Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.SECONDS_IN_A_DAY = 86400;
 
-    this.clockInterval;
     this.timePercent = 0;
 
+    console.log(props);
+
     this.getMomentSecond = this.getMomentSecond.bind(this);
-    this.checkTime = this.checkTime.bind(this);
     this.displayHours = this.displayHours.bind(this);
-    let now = moment();
-    this.state = { currentTime: now.format('h:mm:ss A') , currentSecond: this.getMomentSecond()  };
+
   }
 
   getMomentSecond(){
-    let now = moment();
+    let now = this.props.moment;
+
     let hour = now.hour() * 60 * 60;
     let minute = now.minute()*60;
     let second = now.second();
@@ -26,30 +25,8 @@ export default class Timeline extends Component{
     return total;
   }
 
-
-
-  checkTime(){
-    let now = moment();
-    let currentSecond = this.getMomentSecond();
-      if(this.state.currentSecond != currentSecond){
-        this.setState({
-          currentTime: now.format('h:mm:ss A'),
-          currentSecond
-        });
-      }
-  }
-
-  componentWillMount(){
-    this.clockInterval = setInterval(this.checkTime,100);
-  }
-
-  componentDidMount(){
-
-
-  }
-
   displayHours(){
-    let now = moment();
+    let now = this.props.moment;
     var time = [];
     var active = '';
     for(var i = 0; i < 24; i++){
@@ -64,29 +41,25 @@ export default class Timeline extends Component{
   }
 
   render(){
-
-    this.timePercent = (this.state.currentSecond/this.SECONDS_IN_A_DAY)*100;
+    this.timePercent = (this.getMomentSecond()/this.SECONDS_IN_A_DAY)*100;
     let dir = '';
-    let now = moment();
-    let hour = now.hour();
+
+    let hour = this.props.moment.hour();
 
     if(hour > 12) dir = {right:'0'}
     else dir = {left:'0'}
 
-  //  console.log(timePercent);
     return (
         <div>
             <div className='timeline'>
                 <div style={{left:`${this.timePercent}%`}}  className='time-hand'>
-                    <div style={dir} className ='clock'>{this.state.currentTime}</div>
+                    <div style={dir} className ='clock'>{this.props.moment.format('h:mm:ss A')}</div>
                 </div>
                 {this.displayHours()}
             </div>
-            <div className='clock2'>{this.state.currentTime}</div>
+            <div className='clock2'>{this.props.moment.format('h:mm:ss A')}</div>
 
         </div>
-
-
     )
   }
 }
