@@ -3,14 +3,21 @@ import React, { Component } from 'react'
 
 export default class MainPage extends Component {
 
+    constructor(){
+        super();
+
+    }
+
+
+
     render(){
         return(
-            <div className = 'main-page'>
-                <section className='main-page-header'>
+            <div ref='MainPage' style={{position:'relative'}} className = 'main-page'>
+            <section ref='Top' className='main-page-header'>
                     <div className='blurb'>Everyone is so nice on the internet...</div>
                   <img src='https://s3-us-west-2.amazonaws.com/eseokonofua/images/IMG_0509.jpg'/>
                 </section>
-                <section id='bio'>
+                <section ref='Bio' id='bio'>
                     <h1>Ese who?</h1>
                     <p>I'm a Biomedical computing student at Queen's University. Obsessed with the internet and in love with technology.</p>
                     <p>
@@ -31,7 +38,7 @@ export default class MainPage extends Component {
                 </section>
                 <section style={{backgroundColor:'#f6bd9d'}}></section>
                 <section style={{backgroundColor:'#fc8b82'}}></section>
-                <section className = 'footer'>
+            <section ref='Footer'className = 'footer'>
                     <a href="#">Github</a>
                     <a href="#">Codepen</a>
 
