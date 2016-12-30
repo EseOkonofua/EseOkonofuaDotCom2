@@ -26,11 +26,7 @@ export default class MainPage extends Component {
                 </section>
                 <section className='text' style={{backgroundColor:'#f6bd9d'}}>
                   <h1>Projects</h1>
-                  <div style={{
-                  width: "40%",
-                  backgroundColor: "rgba(100, 130, 154,0.5)",
-                  height: "10px"
-                }}></div>
+
                   <div className='project'>
                     <div>
                       <h2>Dueler</h2>
@@ -39,30 +35,20 @@ export default class MainPage extends Component {
                       <i>My fantasy/RPG take on RockPaperScissors, featuring enemies with unique AIs and awesome names. Created as a non-canvas HTML5 Web App and Game using React.js and Redux.</i>
                     </div>
                   </div>
-                  <div style={{
-                  width: "40%",
-                  backgroundColor: "rgba(100, 130, 154,0.5)",
-                  height: "10px"
-                }}></div>
                   <div  className='project'>
                     <div>
                       <h2>Warble</h2>
                     </div>
                     <div>
-                      <i>In collaboration with one of my best friends, we sought out to hack together an Omegle/Chatroullette clone implemented with peer2peer networking and WebRTC.</i>
+                      <i>In collaboration with one of my best friends, we sought out to hack together an Omegle/Chatroullette clone with social media elements; implemented with peer2peer networking and WebRTC.</i>
                     </div>
                   </div>
-                  <div style={{
-                  width: "40%",
-                  backgroundColor: "rgba(100, 130, 154,0.5)",
-                  height: "10px"
-                }}></div>
                   <div  className='project'>
                     <div>
                       <h2>uTunes</h2>
                     </div>
                     <div>
-                      <i>A light weight desktop music application. With custom tags and playlist generation; implemented in C++. </i>
+                      <i>A light weight desktop music application. With a custom tag feature and dynamic playlist generation; implemented in C++. </i>
                     </div>
                   </div>
                 </section>
