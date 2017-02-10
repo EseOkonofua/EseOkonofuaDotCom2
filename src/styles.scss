@@ -335,6 +335,12 @@ a:active, a:visited {
 }
 
 
+@media(max-width:1200px){
+  .activity-tracker{
+    max-width: 750px;
+  }
+}
+
 
 
 @media(max-width:800px){
@@ -398,6 +404,7 @@ a:active, a:visited {
     font-size:0.2em;
   }
 }
+
 
 @media(max-height:540px){
     .timeline{
