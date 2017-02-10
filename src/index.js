@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, browserHistory, IndexRoute, Link } from 'react-router'
+import { Router, Route, browserHistory, IndexRoute} from 'react-router'
 import {Provider} from 'react-redux'
 import { createStore , applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
@@ -22,16 +22,14 @@ var dispatchMoment = ()=> store.dispatch(setMoment(moment()));
 
 setInterval(dispatchMoment,100);
 
-store.dispatch(getWeather()).then(()=>{
-
-});
+store.dispatch(getWeather());
 
 render(
   <Provider store={store}>
     <Router history = {browserHistory}>
       <Route path='/' component= {Home}>
         <IndexRoute component = {MainPage} />
-        <Route path='/contact' component={Contact} />
+
       </Route>
     </Router>
   </Provider>

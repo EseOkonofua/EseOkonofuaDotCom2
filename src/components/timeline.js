@@ -33,7 +33,7 @@ export default class Timeline extends Component{
       if(now.hour() >= i && now.hour() < (i+1)) active = 'active'
       else active = '';
       let hour = (
-        <div key={i} style={{left:((i/23)*100) - 1 +'%' }} className = {'hours '+active} >{i}</div>
+        <div key={i} style={{left:((i/23)*100) +'%' }} className = {'hours '+active} >{i}</div>
       )
       time.push(hour);
     }
