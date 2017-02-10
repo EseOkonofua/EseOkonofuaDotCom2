@@ -58,6 +58,7 @@ a:active, a:visited {
   flex:2;
   padding:1.5em;
   position:relative;
+  max-width:1094px;
 
   transition:width 0.5s ease-in;
   -webkit-transition-delay: 0.5s; /* Safari */
@@ -426,7 +427,6 @@ section{
 .weather{
   margin-left:8px;
   position:relative;
-  top:2px;
   color:white;
 }
 
