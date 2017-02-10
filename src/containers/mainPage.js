@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 export default class MainPage extends Component {
 
     //cool colour rgba(100, 130, 154, 0.498039)
+    //
 
     render(){
         return(
@@ -28,55 +29,31 @@ export default class MainPage extends Component {
                         My other addictions include anime, fitness, food, hip-hop/trap music and gaming.
                     </p>
                 </section>
-                <section className='text' style={{backgroundColor:'#f6bd9d'}}>
+                <section className='text' style={{backgroundColor:'#ff7a71' }}>
                   <h1>Projects</h1>
-                  <div style={{
-                  width: "40%",
-                  backgroundColor: "rgba(100, 130, 154,0.5)",
-                  height: "10px"
-                }}></div>
                   <div className='project'>
-                    <div>
                       <h2>Dueler</h2>
-                    </div>
-                    <div>
                       <i>My fantasy/RPG take on RockPaperScissors, featuring enemies with unique AIs and awesome names. Created as a non-canvas HTML5 Web App and Game using React.js and Redux.</i>
-                    </div>
+                      <div><a className='proj-git-link' target='_blank' href="https://github.com/EseOkonofua/React-Dueler"><i className="fa fa-github fa-lg" aria-hidden="true"></i></a></div>
                   </div>
-                  <div style={{
-                  width: "40%",
-                  backgroundColor: "rgba(100, 130, 154,0.5)",
-                  height: "10px"
-                }}></div>
                   <div  className='project'>
-                    <div>
                       <h2>Warble</h2>
-                    </div>
-                    <div>
-                      <i>In collaboration with one of my best friends, we sought out to hack together an Omegle/Chatroullette clone implemented with peer2peer networking and WebRTC.</i>
-                    </div>
+                      <i>In collaboration with one of my best friends, we sought out to hack together an Omegle/Chatroullette clone with social media elements; implemented with peer2peer networking and WebRTC.</i>
+                      <div style={{marginTop:'5px'}}><a className='proj-git-link' href="rdueler.surge.sh"><i className="fa fa-github fa-lg" aria-hidden="true"></i></a></div>
                   </div>
-                  <div style={{
-                  width: "40%",
-                  backgroundColor: "rgba(100, 130, 154,0.5)",
-                  height: "10px"
-                }}></div>
                   <div  className='project'>
-                    <div>
                       <h2>uTunes</h2>
-                    </div>
-                    <div>
-                      <i>A light weight desktop music application. With custom tags and playlist generation; implemented in C++. </i>
-                    </div>
+                      <i>A light weight desktop music application. With a custom tag feature and dynamic playlist generation; implemented in C++. </i>
+                      <div><a className='proj-git-link' href="http://rdueler.surge.sh"><i className="fa fa-github fa-lg" aria-hidden="true"></i></a></div>
                   </div>
                 </section>
-                <section className='text' style={{backgroundColor:'#fc8b82'}}>
-                  <h1>Work experience</h1>
-                </section>
-                <section className='my-face'>
-                  <div></div>
-                  <img src="https://s3-us-west-2.amazonaws.com/eseokonofua/images/headshot.jpg"></img>
-                </section>
+                <footer style={{color:'black'}}>
+                  <a title='My LinkedIn Profile' target='_blank' href='https://ca.linkedin.com/in/ese-okonofua-889ab9110'><i className='fa fa-linkedin-square fa-lg'></i></a>
+                  <a title= 'My Github!' target='_blank' href='https://github.com/EseOkonofua'><i className='fa fa-github-alt fa-lg'></i></a><br/>
+                  <a style={{marginTop:'3px'}} href='mailto:eseokonofua95@gmail.com'><i>eseokonofua95@gmail.com</i></a>
+                  <div style={{color:'#ccc',bottom:'2px'}}>&copy; 2017 Ese Okonofua</div>
+                </footer>
+
 
             </div>
         )
