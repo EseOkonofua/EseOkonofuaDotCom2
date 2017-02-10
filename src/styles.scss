@@ -58,7 +58,6 @@ a:active, a:visited {
   flex:2;
   padding:1.5em;
   position:relative;
-  max-width:900px;
 
   transition:width 0.5s ease-in;
   -webkit-transition-delay: 0.5s; /* Safari */
@@ -87,7 +86,7 @@ a:active, a:visited {
     -webkit-transition-delay: 0.5s; /* Safari */
     transition-delay: 0.5s;
     color:white;
-
+    min-width: 600px;
     section.text, footer{
       min-height: 100px;
       padding:3rem;
@@ -334,12 +333,6 @@ a:active, a:visited {
     background-color:#fd5c78;
 }
 
-
-@media(max-width:1440px){
-  .activity-tracker{
-    max-width: 700px;
-  }
-}
 
 
 
