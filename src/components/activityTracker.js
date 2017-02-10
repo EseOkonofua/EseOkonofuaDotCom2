@@ -83,7 +83,7 @@ export default class ActivityTracker extends Component {
             <div className='activity-tracker'>
                 <p className='day'>{now.format('dddd, Do')} <Weather {...this.props}/></p>
                 <p className='date'>{now.format('MMMM YYYY')}</p>
-                <div className='title' alt='FirstName'>Ese<span onClick ={this.playEse} className = {(this.props.weather && this.props.weather.main.temp  < 13) ? 'pronounce cool' : 'pronounce hot'}> /&#283;s'&#257;'/</span></div>
+                <div className='title' alt='FirstName'>Ese<span onClick ={this.playEse} className = {(this.props.weather && this.props.weather.main.temp  < 13) ? 'pronounce cool' : 'pronounce hot'}> /&#283;s'&#257;'/ <i className='fa fa-volume-up'></i></span></div>
                 <div className='title' alt='LastName'>Okonofua.</div>
                 <div>Full stack life developer. Google search guru.</div>
                 <div ref = 'whatAmIDoing' className='what-am-i-doing'>

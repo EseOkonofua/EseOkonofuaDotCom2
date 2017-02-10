@@ -316,8 +316,18 @@ a:active, a:visited {
 .pronounce{
     font-size: 20%;
     cursor: pointer;
-    color:aqua;
+    color: white;
+
+    i{
+      font-size: 0.6em;
+      animation-name: fadeInFadeOut;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
 }
+
+
 
 #bio {
     background-color:#fd5c78;
@@ -416,21 +426,24 @@ section{
 .weather{
   margin-left:8px;
   position:relative;
-  top:2px
+  top:2px;
+  color:white;
 }
 
-.weather.cool{
+.cool{
   color:aqua;
 }
-.weather.hot{
+
+.hot{
   color:$sunyellow
 }
+
 .weather:after{
-  content:attr(data-temp);
+  content:attr(data-temp) " in " attr(data-location);
   display: inline-block;
   position:relative;
   left:4px;
-  font-size:0.5rem;
+  font-size:0.6rem;
   color:white;
 }
 

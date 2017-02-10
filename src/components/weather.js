@@ -4,6 +4,7 @@ export default class Weather extends Component{
     constructor(props){
         super(props);
 
+        console.log(props)
     }
 
     getStyle(){
@@ -11,9 +12,8 @@ export default class Weather extends Component{
       let hour = this.props.moment.hour();
       let temp = this.props.weather.main.temp;
 
-
-      if(hour >= 7 && hour <= 19) className+='weather rotate fa fa-sun-o fa-lg';
-      else className += 'weather sway fa fa-moon-o fa-lg';
+      if(hour >= 7 && hour <= 19) className+='rotate fa fa-sun-o fa-lg';
+      else className += 'sway fa fa-moon-o fa-lg';
 
       if(temp < 13) className+= ' cool';
       else className+= ' hot';
@@ -26,7 +26,7 @@ export default class Weather extends Component{
 
         if(this.props.weather){
             return (
-              <span data-temp={this.props.weather.main.temp+'\xB0'+'C'}
+              <span data-location={this.props.weather.name} data-temp={this.props.weather.main.temp+'\xB0'+'C'}
                 className='weather'>
                 <i alt='weather'
                  className={this.getStyle()}></i>
