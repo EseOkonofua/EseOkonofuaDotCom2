@@ -32,7 +32,7 @@ export default class MainPage extends Component {
                   <h1>Projects</h1>
                   <div  className='project'>
                       <h2>500px - Pop</h2>
-                      <p>A minimalistic and beautiful photo viewer, showcasing the most popular photos from wesite 500px.com.</p>
+                      <p>A minimalistic and beautiful photo viewer, showcasing the most popular photos from website 500px.com.</p>
                       <div>
                         <a target='_blank' title='500pxPop on GitHub' href="https://github.com/EseOkonofua/500pxPopularPhotos"><i className='fa fa-github fa-lg'></i></a>
                         <a target='_blank' title='View 500px Pop' href='http://500px.eokonofua.com'><i className='fa fa-link'></i> Visit site</a>
