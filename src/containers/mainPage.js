@@ -31,16 +31,26 @@ export default class MainPage extends Component {
                 <section className='text' style={{backgroundColor:'#ff7a71' }}>
                   <h1>Projects</h1>
                   <div  className='project'>
+                      <h2>500px - Pop</h2>
+                      <p>A minimalistic and beautiful photo viewer, showcasing the most popular photos from wesite 500px.com.</p>
+                      <div>
+                        <a target='_blank' title='500pxPop on GitHub' href="https://github.com/EseOkonofua/500pxPopularPhotos"><i className='fa fa-github fa-lg'></i></a>
+                        <a target='_blank' title='View 500px Pop' href='http://500px.eokonofua.com'><i className='fa fa-link'></i> Visit site</a>
+                      </div>
+                  </div>
+                  <div  className='project'>
                       <h2>N2K <small><i>Need to know</i></small></h2>
                       <p>Awarded the title for the "Best use of Natural Language Processing." during QHacks '17. N2K is a Chrome Extension / Web Application that runs political, sentimental and emotional analyses on articles on the web in real time.</p>
-                      <div><a target='_blank' title='Devpost on N2K' href="https://devpost.com/software/need-2-know"><i className='fa fa-link'></i> Devpost</a></div>
+                      <div>
+                        <a target='_blank' title='Devpost on N2K' href="https://devpost.com/software/need-2-know"><i className='fa fa-link'></i> Devpost</a>
+                      </div>
                   </div>
                   <div className='project'>
                       <h2>Dueler</h2>
                       <p>My fantasy/RPG take on RockPaperScissors, featuring enemies with unique AIs and awesome names. Created as a non-canvas HTML5 Web App and Game using React.js and Redux.</p>
                       <div>
                         <a title='Dueler on GitHub' target='_blank' href="https://github.com/EseOkonofua/React-Dueler"><i className="fa fa-github fa-lg" aria-hidden="true"></i></a>
-                        <a title='Play Dueler' target='_blank' href='http://rdueler.surge.sh'><i className='fa fa-link'></i> Play it</a>
+                        <a title='Play Dueler' target='_blank' href='http://dueler.eokonofua.com'><i className='fa fa-link'></i> Visite site</a>
 
                       </div>
                   </div>
