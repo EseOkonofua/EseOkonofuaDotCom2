@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ActivityTracker from '../components/activityTracker'
+import ActivityTracker from '../components/activity_tracker'
 
 class Home extends Component {
   render(){
