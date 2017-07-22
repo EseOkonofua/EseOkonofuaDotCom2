@@ -1,39 +1,32 @@
 import React, { Component } from 'react'
 
 export default class Weather extends Component{
-    constructor(props){
-        super(props);
+  constructor(props){
+      super(props);
+  }
+
+  getStyle(){
+    let className = "";
+    let hour = this.props.moment.hour();
+    let temp = this.props.weather.main.temp;
+
+    if(hour >= 7 && hour <= 19) className+='rotate fa fa-sun-o fa-lg';
+    else className += 'sway fa fa-moon-o fa-lg';
+
+    if(temp < 13) className+= ' cool';
+    else className+= ' hot';
+
+    return className;
+  }
+
+  render(){
+    if(this.props.weather){
+      return (
+        <span data-location={this.props.weather.name} data-temp={this.props.weather.main.temp+'\xB0'+'C'} className='weather'>
+          <i alt='weather' className={this.getStyle()}></i>
+        </span>
+      )
     }
-
-    getStyle(){
-      let className = "";
-      let hour = this.props.moment.hour();
-      let temp = this.props.weather.main.temp;
-
-      if(hour >= 7 && hour <= 19) className+='rotate fa fa-sun-o fa-lg';
-      else className += 'sway fa fa-moon-o fa-lg';
-
-      if(temp < 13) className+= ' cool';
-      else className+= ' hot';
-
-
-      return className;
-    }
-
-    render(){
-
-        if(this.props.weather){
-            return (
-              <span data-location={this.props.weather.name} data-temp={this.props.weather.main.temp+'\xB0'+'C'}
-                className='weather'>
-                <i alt='weather'
-                 className={this.getStyle()}></i>
-              </span>
-
-            )
-
-        }
-        else return <span></span>
-
-    }
+    else return <span></span>
+  }
 }

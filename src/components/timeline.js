@@ -4,14 +4,10 @@ export default class Timeline extends Component{
   constructor(props){
     super(props);
     this.SECONDS_IN_A_DAY = 86400;
-
     this.timePercent = 0;
-
-    console.log(props);
 
     this.getMomentSecond = this.getMomentSecond.bind(this);
     this.displayHours = this.displayHours.bind(this);
-
   }
 
   getMomentSecond(){
@@ -50,16 +46,15 @@ export default class Timeline extends Component{
     else dir = {left:'0'}
 
     return (
-        <div>
-            <div className='timeline'>
-                <div style={{left:`${this.timePercent}%`}}  className='time-hand'>
-                    <div style={dir} className ='clock'>{this.props.moment.format('h:mm:ss A')}</div>
-                </div>
-                {this.displayHours()}
-            </div>
-            <div className='clock2'>{this.props.moment.format('h:mm:ss A')}</div>
-
+      <div>
+        <div className='timeline'>
+          <div style={{left:`${this.timePercent}%`}}  className='time-hand'>
+              <div style={dir} className ='clock'>{this.props.moment.format('h:mm:ss A')}</div>
+          </div>
+          {this.displayHours()}
         </div>
+        <div className='clock2'>{this.props.moment.format('h:mm:ss A')}</div>
+      </div>
     )
   }
 }

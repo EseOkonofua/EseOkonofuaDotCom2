@@ -3,19 +3,18 @@ import { connect } from 'react-redux'
 import ActivityTracker from '../components/activityTracker'
 
 class Home extends Component {
-
   render(){
     return(
-        <div className='container'>
-            <ActivityTracker {...this.props} />
-            {this.props.children}
-        </div>
+      <div className='container'>
+        <ActivityTracker {...this.props} />
+        {this.props.children}
+      </div>
     )
   }
 }
 
 function mapStateToProps(state){
-    return state
+  return state
 }
 
 export default connect(mapStateToProps)(Home)

@@ -29,7 +29,6 @@ render(
     <Router history = {browserHistory}>
       <Route path='/' component= {Home}>
         <IndexRoute component = {MainPage} />
-
       </Route>
     </Router>
   </Provider>

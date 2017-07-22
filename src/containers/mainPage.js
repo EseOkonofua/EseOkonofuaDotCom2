@@ -50,7 +50,7 @@ export default class MainPage extends Component {
                       <p>My fantasy/RPG take on RockPaperScissors, featuring enemies with unique AIs and awesome names. Created as a non-canvas HTML5 Web App and Game using React.js and Redux.</p>
                       <div>
                         <a title='Dueler on GitHub' target='_blank' href="https://github.com/EseOkonofua/React-Dueler"><i className="fa fa-github fa-lg" aria-hidden="true"></i></a>
-                        <a title='Play Dueler' target='_blank' href='http://dueler.eokonofua.com'><i className='fa fa-link'></i> Visite site</a>
+                        <a title='Play Dueler' target='_blank' href='http://dueler.eokonofua.com'><i className='fa fa-link'></i> Visit site</a>
 
                       </div>
                   </div>
