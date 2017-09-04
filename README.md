@@ -2,8 +2,8 @@
 
 # EseOkonofuaDotCom2 
 [My second personal website](https://eokonofuadotcom2.herokuapp.com)
-I've made. This was a good way to practice redux coding and also to flex the design portion of my brain.
-The website was made to be very customizable allowing anyone to be able to spool up their own personal website in a similar style too. This customizability is achieved by using data fetched from the **website.json** file.
+I've made. This was a good way to practice redux coding and also to flex the design portion of my brain. <br/>
+The website was made to be very customizable allowing anyone to be able to spool up their own personal website in a similar style too. This customizability is achieved by using data fetched from the **website.json** file which can be freely altered.
 
 ## Technology stack
 - Node.js for api and web server.
