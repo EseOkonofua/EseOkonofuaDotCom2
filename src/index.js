@@ -10,7 +10,6 @@ import allReducers from './reducers'
 
 import Home from './containers/home'
 import MainPage from './containers/main_page'
-import Contact from './components/contact'
 
 //SERVER ACTIONS
 import {getWebsiteData, getWeather, setMoment} from './actions'
