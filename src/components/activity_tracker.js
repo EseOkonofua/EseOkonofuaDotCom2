@@ -9,11 +9,11 @@ export default class ActivityTracker extends Component {
     this.getActivities = this.getActivities.bind(this);
     this.switchActivity = this.switchActivity.bind(this);
     this.getPre = this.getPre.bind(this);
-    this.playEse = this.playEse.bind(this);
+    this.playPronunciation = this.playPronunciation.bind(this);
     this.index = 0;
 
     this.activityLoop;
-    this.pronounciation = new Audio('EsePronounce.wav');
+    this.pronunciation = new Audio('pronunciation.wav');
 
     this.state = {
       activity: {
@@ -69,11 +69,11 @@ export default class ActivityTracker extends Component {
   }
 
   componentWillMount(){
-    this.activityLoop = setInterval(this.switchActivity,20000);
+    this.activityLoop = setInterval(this.switchActivity, 20000);
   }
 
-  playEse(){
-    this.pronounciation.play();
+  playPronunciation(){
+    this.pronunciation.play();
   }
 
   render(){
@@ -82,9 +82,9 @@ export default class ActivityTracker extends Component {
       <div className='activity-tracker'>
         <p className='day'>{now.format('dddd, Do')} <Weather {...this.props}/></p>
         <p className='date'>{now.format('MMMM YYYY')}</p>
-        <div className='title' alt='FirstName'>Ese<span onClick ={this.playEse} className = {(this.props.weather && this.props.weather.main.temp  < 13) ? 'pronounce cool' : 'pronounce hot'}> /&#283;s'&#257;'/ <i className='fa fa-volume-up'></i></span></div>
-        <div className='title' alt='LastName'>Okonofua.</div>
-        <div>Full stack life developer. Google search guru.</div>
+        <div className='title' alt='FirstName'>{this.props.website_data.personal.firstname}<span dangerouslySetInnerHTML={{__html: `${this.props.website_data.personal.pronunciation} <i class='fa fa-volume-up'></i>`}} onClick ={this.playPronunciation} className = {(this.props.weather && this.props.weather.main.temp  < 13) ? 'pronounce cool' : 'pronounce hot'}></span></div>
+        <div className='title' alt='LastName'>{this.props.website_data.personal.lastname}.</div>
+        <div>{this.props.website_data.personal.tagline}</div>
         <div ref = 'whatAmIDoing' className='what-am-i-doing'>
             <small>{this.state.activity.pre}</small>
             <div>{this.state.activity.activity}</div>

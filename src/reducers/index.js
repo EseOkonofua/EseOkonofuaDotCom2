@@ -9,6 +9,13 @@ const allReducers = combineReducers({
     }
     return state
   },
+  website_data:(state=null, action)=>{
+    switch(action.type){
+      case 'SET_WEBSITE_DATA':
+        return action.data
+    }
+    return state
+  },
   weather:(state=null,action)=>{
     switch(action.type){
       case 'SET_WEATHER':

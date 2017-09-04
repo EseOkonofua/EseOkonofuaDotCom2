@@ -26,10 +26,10 @@ export default class Timeline extends Component{
     var time = [];
     var active = '';
     for(var i = 0; i < 24; i++){
-      if(now.hour() >= i && now.hour() < (i+1)) active = 'active'
-      else active = '';
+      active = now.hour() >= i+1 && now.hour() < (i+2) ? 'active' : '';
+
       let hour = (
-        <div key={i} style={{left:((i/23)*100) +'%' }} className = {'hours '+active} >{i}</div>
+        <div key={i} style={{left:((i/23)*100) +'%' }} className = {'hours '+active} >{i+1}</div>
       )
       time.push(hour);
     }

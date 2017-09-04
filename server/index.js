@@ -5,7 +5,6 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
-
 if(process.env.NODE_ENV !== 'production'){
 	const webpackHotMiddleware = require('webpack-hot-middleware');
 	const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -23,20 +22,30 @@ if(process.env.NODE_ENV !== 'production'){
 	app.use(webpackHotMiddleware(compiler));
 }
 
-
 var updateWeather = require('./weather.js').updateWeather;
 const UPDATE_INTERVAL = 30 * 60 * 1000;
 updateWeather();
 var update = setInterval(updateWeather, UPDATE_INTERVAL);
 
+app.get('/api/website', function(req, res){
+  fs.readFile(path.resolve('./server/website.json'), function(err, data){
+		if(err) {
+			console.log(`Error reading website data file: ${err}`);
+			res.send(err);
+		}
+		else {
+			res.json(JSON.parse(data));
+		}
+	});
+});
 
 app.get('/api/weather', function(req,res){
-	fs.readFile(path.resolve('./server/weather.json'),function(err,data){
+	fs.readFile(path.resolve('./server/weather.json'), function(err, data){
 		if(err) {
 			console.log(`Error reading weather file: ${err}`);
 			res.send(err);
 		}
-		else{
+		else {
 			res.json(JSON.parse(data));
 		}
 	});
@@ -45,8 +54,6 @@ app.get('/api/weather', function(req,res){
 app.get('*', function(req, res){
 	res.sendFile(path.resolve('public/index.html'));
 });
-
-
 
 var PORT = process.env.PORT || 80;
 

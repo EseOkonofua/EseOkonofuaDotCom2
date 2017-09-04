@@ -1,0 +1,71 @@
+{
+  "cover":{
+    "blurb": "Everyone is so nice on the internet...",
+    "image_url": "https://s3-us-west-2.amazonaws.com/eseokonofua/images/IMG_0509.jpg"
+  },
+  "personal": {
+    "firstname": "Ese",
+    "lastname": "Okonofua",
+    "pronunciation": "/&#283;s'&#257;'/",
+    "tagline": "Full stack life developer. Google search guru.",
+    "email": "eseokonofua95@gmail.com",
+    "github": "https://github.com/EseOkonofua",
+    "linkedin": "https://ca.linkedin.com/in/ese-okonofua-889ab9110"
+  },
+  "bio": {
+    "header": "Ese who?",
+    "body": [
+      "I'm a Biomedical computing student at Queen's University. Obsessed with the internet and in love with technology.",
+      "Ever since I realized the vastness of the internet and what one is capable of achieving with it, I've been hooked <small>(and a little overwhelmed)</small>. I'm always keen on learning about the latest in bleeding edge web tech whilst simultaneously working on personal projects that I find interesting.",
+      "I'm on a new path to physical, mental and intellectual growth.",
+      "Thus, I have developed a newly born addiction to Medium articles that motivate and inspire me to be the best version of myself. My other addictions include anime, fitness, food, hip-hop/trap music and gaming."
+    ]
+  },
+  "projects": [
+    {
+      "title": "500px - Pop",
+      "description": "A minimalistic and beautiful photo viewer, showcasing the most popular photos from website 500px.com.",
+      "github": "https://github.com/EseOkonofua/500pxPopularPhotos",
+      "links": [
+        {
+          "title": "Visit site",
+          "href": "http://500px.eokonofua.com"
+        }
+      ]
+    },
+    {
+      "title": "N2K - Need to know",
+      "description": "Awarded the title for the \"Best use of Natural Language Processing.\" during QHacks '17. N2K is a Chrome Extension / Web Application that runs political, sentimental and emotional analyses on articles on the web in real time.",
+      "github": null,
+      "links": [
+        {
+          "title": "Devpost",
+          "href": "https://devpost.com/software/need-2-know"
+        }
+      ]
+    },
+    {
+      "title": "Dueler",
+      "description": "My fantasy/RPG take on RockPaperScissors, featuring enemies with unique AIs and awesome names. Created as a non-canvas HTML5 Web App and Game using React.js and Redux.",
+      "github": "https://github.com/EseOkonofua/React-Dueler",
+      "links": [
+        {
+          "title": "Visit site",
+          "href": "http://dueler.eokonofua.com"
+        }
+      ]
+    },
+    {
+      "title": "Warble",
+      "description": "In collaboration with one of my best friends, we sought out to hack together an Omegle/Chatroullette clone with social media elements; implemented with peer2peer networking and WebRTC.",
+      "github": "https://github.com/Bolboa/Warble",
+      "links": []
+    },
+    {
+      "title": "uTunes",
+      "description": "A light weight desktop music application. With a custom tag feature and dynamic playlist generation; implemented in C++.",
+      "github": "https://github.com/EseOkonofua/uTunes",
+      "links": []
+    }
+  ]
+}
