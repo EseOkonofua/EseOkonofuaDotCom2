@@ -6,12 +6,12 @@ My second personal website I've made. This was a good way to practice redux codi
 The website was made to be customizable using data fetched from the **website.json** file.
 
 ## Technology stack
-- Node.js
-- Openweather API
-- React/Redux
-- Redux thunk 
-- React router
-- SCSS
+- Node.js for api and web server.
+- Openweather API for weather stuff.
+- React/Redux for unidirectional data management.
+- *Redux thunk* for Asynchronous store management. 
+- *React Router* For organization.
+- SCSS for dynamic styling.
 
 ## Installation
 ```javascript
