@@ -2,9 +2,9 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 const OPEN_WEATHER_KEY = '651e2ad32f3d96c75c8c90751258aa83';
-const CITY_ID = '6122091';
-const CITY = 'Richmond Hill';
-const COUNTRY = 'CAN';
+const CITY_ID = '5809844';
+// const CITY = 'Seattle';
+// const COUNTRY = 'USA';
 
 
 //OPEN WEATHER API OPTIONS
