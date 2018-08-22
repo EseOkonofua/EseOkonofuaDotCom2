@@ -9,7 +9,7 @@ function setWebsiteData(data){
 
 function getWebsiteData(){
   return function(dispatch){
-    return fetch('/api/website').then(res => res.json())
+    return fetch('/website.json').then(res => res.json())
     .then(resJson => {
       dispatch(setWebsiteData(resJson));
       return Promise.resolve(resJson);
@@ -30,7 +30,7 @@ function setWeather(weather){
 
 function getWeather(){
   return function(dispatch){
-    return fetch('/api/weather').then(res => res.json())
+    return fetch('https://weather-fetcher.azurewebsites.net/api/HttpTriggerCSharp1?code=NNt7kLiTD2cwJad5/Ugh/DxDTn1dQsVS4ExxrCwgYtNa3w/KDY36kQ==').then(res => res.json())
     .then(resJson =>{
       var data = JSON.parse(resJson);
       dispatch(setWeather(data));
