@@ -32,9 +32,8 @@ function getWeather(){
   return function(dispatch){
     return fetch('https://weather-fetcher.azurewebsites.net/api/HttpTriggerCSharp1?code=NNt7kLiTD2cwJad5/Ugh/DxDTn1dQsVS4ExxrCwgYtNa3w/KDY36kQ==').then(res => res.json())
     .then(resJson =>{
-      var data = JSON.parse(resJson);
-      dispatch(setWeather(data));
-      return Promise.resolve(data);
+      dispatch(setWeather(resJson));
+      return Promise.resolve(resJson);
     })
     .catch(err=>{
       console.error("Error getting weather data:", err)
